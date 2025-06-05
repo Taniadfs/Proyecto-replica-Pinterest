@@ -7,9 +7,9 @@ header.appendChild(nav)
 
 const navleft = crearNavLeft()
 const navSearch = crearNavSearch()
-const navright = crearNavRight()
+//const navright = crearNavRight()
 
-nav.append(navleft, navSearch, navright)
+nav.append(navleft, navSearch) //navright
 
 function crearNavLeft() {
   const left = document.createElement('div')
@@ -30,5 +30,23 @@ function crearNavLeft() {
   })
   return left
 }
+function crearNavSearch() {
+  const navSearch = document.createElement('div')
+  navSearch.classList.add('nav-search')
+
+  const inputSearch = document.createElement('input')
+  inputSearch.type = 'text'
+  inputSearch.placeholder = 'Buscar en Inspirest'
+  inputSearch.classList.add('search-input')
+
+  const searchButton = document.createElement('img')
+  searchButton.classList.add('search-button')
+  searchButton.src = '/Assets/buscar.png'
+  searchButton.alt = 'Buscar'
+
+  navSearch.append(inputSearch, searchButton)
+  return navSearch
+}
 
 console.log(crearNavLeft())
+console.log(crearNavSearch())
