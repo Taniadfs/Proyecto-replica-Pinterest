@@ -7,9 +7,9 @@ header.appendChild(nav)
 
 const navleft = crearNavLeft()
 const navSearch = crearNavSearch()
-//const navright = crearNavRight()
+const navright = crearNavRight()
 
-nav.append(navleft, navSearch) //navright
+nav.append(navleft, navSearch, navright)
 
 function crearNavLeft() {
   const left = document.createElement('div')
@@ -21,8 +21,8 @@ function crearNavLeft() {
   logo.classList.add('logo')
   left.appendChild(logo)
 
-  const botones = ['Incio', 'Explorar', 'Crear']
-  botones.forEach((boton) => {
+  const botonesLeft = ['Incio', 'Explorar', 'Crear']
+  botonesLeft.forEach((boton) => {
     const btn = document.createElement('button')
     btn.textContent = boton
     btn.classList.add('nav-button')
@@ -51,6 +51,27 @@ function crearNavSearch() {
   navSearch.append(wrapperSearch)
 
   return navSearch
+}
+
+function crearNavRight() {
+  const right = document.createElement('div')
+  right.classList.add('nav-right')
+
+  const iconosRight = [
+    { src: '/Assets/campana.png', alt: 'Notificaciones' },
+    { src: '/Assets/burbuja-de-chat.png', alt: 'Mensajes' },
+    { src: '/Assets/usuario-de-perfil.png', alt: 'Perfil' }
+  ]
+
+  iconosRight.forEach((icono) => {
+    const img = document.createElement('img')
+    img.src = icono.src
+    img.alt = icono.alt
+    img.classList.add('icono-right')
+    right.appendChild(img)
+  })
+
+  return right
 }
 
 console.log(crearNavLeft())
