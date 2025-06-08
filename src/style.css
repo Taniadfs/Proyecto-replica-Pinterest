@@ -42,13 +42,23 @@
   width: 18px;
 }
 
-.nav-Search {
+.nav-button {
   display: flex;
   align-items: center;
   background-color: f0f0f0;
   border-radius: 20px;
+  border: none;
   padding: 0 0.5rem;
-  height: 40;
+  cursor: pointer;
+  gap: 0.5rem;
+  height: 25px;
+}
+
+.nav-Search {
+  align-items: center;
+  background-color: f0f0f0;
+  border-radius: 20px;
+  padding: 0 0.5rem;
   gap: 0.5rem;
 }
 .search-wrapper {
@@ -58,18 +68,20 @@
 
 .search-input {
   height: 30px;
-  padding: 0 1rem;
+  padding: 0 1rem 0 2rem;
   border: none;
   border-radius: 20px;
   background-color: #f0f0f0;
   font-size: 14px;
-  outline: none; /* quita el borde azul del focus */
-  width: 300px; /* o el ancho que tú quieras */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* opcional, para darle un poco de profundidad */
+  outline: none;
+  width: 300px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .search-button {
+  margin-left: 0.5rem;
   position: absolute;
+  top: 50%;
   object-fit: contain;
   width: 20px;
   height: 20px;
