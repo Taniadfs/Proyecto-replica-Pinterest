@@ -1,4 +1,7 @@
 import './style.css'
+import { crearNavLeft } from './componentes/nav-left.js'
+import { crearNavSearch } from './componentes/nav-search.js'
+import { crearNavRight } from './componentes/nav-right.js'
 
 const header = document.querySelector('header')
 const nav = document.createElement('nav')
@@ -11,73 +14,7 @@ const navright = crearNavRight()
 
 nav.append(navleft, navSearch, navright)
 
-function crearNavLeft() {
-  const left = document.createElement('div')
-  left.classList.add('nav-left')
-
-  const logo = document.createElement('img')
-  logo.src = '/public/Assets/logo-pinterest-vectoriel.svg'
-  logo.alt = 'Logo de Pinterest'
-  logo.classList.add('logo')
-  left.appendChild(logo)
-
-  const botonesLeft = ['Incio', 'Explorar', 'Crear']
-  botonesLeft.forEach((boton) => {
-    const btn = document.createElement('button')
-    btn.textContent = boton
-    btn.classList.add('nav-button')
-    left.appendChild(btn)
-  })
-  return left
-}
-function crearNavSearch() {
-  const navSearch = document.createElement('div')
-  navSearch.classList.add('nav-search')
-
-  const wrapperSearch = document.createElement('div')
-  wrapperSearch.classList.add('search-wrapper')
-
-  const inputSearch = document.createElement('input')
-  inputSearch.type = 'text'
-  inputSearch.placeholder = 'Buscar en Inspirest'
-  inputSearch.classList.add('search-input')
-
-  const searchButton = document.createElement('img')
-  searchButton.classList.add('search-button')
-  searchButton.src = '/Assets/buscar.png'
-  searchButton.alt = 'Buscar'
-
-  wrapperSearch.append(searchButton, inputSearch)
-  navSearch.append(wrapperSearch)
-
-  return navSearch
-}
-
-function crearNavRight() {
-  const right = document.createElement('div')
-  right.classList.add('nav-right')
-
-  const iconosRight = [
-    { src: '/Assets/campana.png', alt: 'Notificaciones' },
-    { src: '/Assets/burbuja-de-chat.png', alt: 'Mensajes' },
-    { src: '/Assets/usuario-de-perfil.png', alt: 'Perfil' }
-  ]
-
-  iconosRight.forEach((icono) => {
-    const buttonsRight = document.createElement('button')
-    buttonsRight.classList.add('nav-button-right')
-
-    const imgRight = document.createElement('img')
-    imgRight.src = icono.src
-    imgRight.alt = icono.alt
-    imgRight.classList.add('icono-right')
-
-    buttonsRight.appendChild(imgRight)
-    right.appendChild(buttonsRight)
-  })
-
-  return right
-}
-
 console.log(crearNavLeft())
 console.log(crearNavSearch())
+
+const main = document.querySelector('main')
