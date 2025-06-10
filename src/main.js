@@ -64,11 +64,16 @@ function crearNavRight() {
   ]
 
   iconosRight.forEach((icono) => {
-    const img = document.createElement('img')
-    img.src = icono.src
-    img.alt = icono.alt
-    img.classList.add('icono-right')
-    right.appendChild(img)
+    const buttonsRight = document.createElement('button')
+    buttonsRight.classList.add('nav-button-right')
+
+    const imgRight = document.createElement('img')
+    imgRight.src = icono.src
+    imgRight.alt = icono.alt
+    imgRight.classList.add('icono-right')
+
+    buttonsRight.appendChild(imgRight)
+    right.appendChild(buttonsRight)
   })
 
   return right
