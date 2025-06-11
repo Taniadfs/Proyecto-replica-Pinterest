@@ -18,3 +18,6 @@ console.log(crearNavLeft())
 console.log(crearNavSearch())
 
 const main = document.querySelector('main')
+const section = document.createElement('section')
+section.classList.add('main-section')
+main.appendChild(section)

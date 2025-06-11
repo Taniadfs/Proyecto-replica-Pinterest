@@ -24,6 +24,7 @@
   box-sizing: border-box;
 }
 
+/* ESTILOS DE LA NAVEGACIÓN  HEADER*/
 .nav {
   display: flex;
   align-items: center;
@@ -112,4 +113,10 @@
   height: 20px;
   object-fit: contain;
   display: block;
+}
+
+/* ESTILOS DEL CONTENEDOR EN EL MAIN */
+.main-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
