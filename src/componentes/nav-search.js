@@ -18,5 +18,5 @@ export function crearNavSearch() {
   wrapperSearch.append(searchButton, inputSearch)
   navSearch.append(wrapperSearch)
 
-  return navSearch
+  return { navSearch, searchButton, inputSearch }
 }
