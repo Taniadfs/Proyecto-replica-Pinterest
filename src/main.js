@@ -19,7 +19,7 @@ nav.append(navleft, navSearch, navright)
 console.log(crearNavLeft())
 console.log(crearNavSearch())
 console.log(crearNavRight())
-iniciarSearchListener(searchButton)
+iniciarSearchListener(searchButton, inputSearch)
 
 const mainSection = crearMainSection()
 console.log(crearMainSection())

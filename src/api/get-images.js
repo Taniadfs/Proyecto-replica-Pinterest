@@ -1,4 +1,4 @@
-async function getImages(query) {
+export async function getImages(query) {
   try {
     const response = await fetch(
       `https://api.unsplash.com/search/photos?query=${query}&client_id=XPeoqeXdO4KBPfoJmbKZQ04eefqdllWVkuMYABRY7Ps`
