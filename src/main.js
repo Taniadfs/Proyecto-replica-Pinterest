@@ -22,5 +22,5 @@ console.log(crearNavRight())
 iniciarSearchListener(searchButton, inputSearch)
 
 const mainSection = crearMainSection()
-console.log(crearMainSection())
+console.log(mainSection())
 console.log('¡Hola, Inspirest!')
