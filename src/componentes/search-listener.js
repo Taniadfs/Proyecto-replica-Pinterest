@@ -6,6 +6,7 @@ export default function iniciarSearchListener(boton, input) {
     console.log('Has hecho click en la lupa')
     const query = input.value.trim()
     if (query === '') return
+    input.value = ''
 
     let images = await getImages(query)
     console.log('Resultados de la búsqueda:', images)
@@ -13,8 +14,7 @@ export default function iniciarSearchListener(boton, input) {
     if (!images || images.length === 0) {
       images = await getImages('gatos')
       console.log('No se encontraron resultados, mostrando gatos:', images)
-
-      renderImages(images)
     }
+    renderImages(images)
   })
 }

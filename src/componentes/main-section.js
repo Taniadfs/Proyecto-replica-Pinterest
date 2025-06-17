@@ -4,5 +4,10 @@ export function crearMainSection() {
   section.classList.add('main-section')
   section.id = 'gallery-section'
   main.appendChild(section)
-  return section
+
+  const container = document.createElement('div')
+  container.id = 'gallery-container'
+  section.appendChild(container)
+
+  return { section, container }
 }

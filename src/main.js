@@ -21,6 +21,5 @@ console.log(crearNavSearch())
 console.log(crearNavRight())
 iniciarSearchListener(searchButton, inputSearch)
 
-const mainSection = crearMainSection()
-console.log(mainSection())
+const { container } = crearMainSection()
 console.log('¡Hola, Inspirest!')
