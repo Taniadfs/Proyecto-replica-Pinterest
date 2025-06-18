@@ -1,5 +1,6 @@
 export function renderImages(images) {
   const containerImages = document.getElementById('gallery-container')
+  containerImages.classList.add('gallery-container')
   containerImages.innerHTML = ''
 
   images.forEach((image) => {
