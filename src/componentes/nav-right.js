@@ -12,6 +12,10 @@ export function crearNavRight() {
     const buttonsRight = document.createElement('button')
     buttonsRight.classList.add('nav-button-right')
 
+    if (icono.alt === 'Perfil') {
+      buttonsRight.classList.add('icono-perfil')
+    }
+
     const imgRight = document.createElement('img')
     imgRight.src = icono.src
     imgRight.alt = icono.alt
