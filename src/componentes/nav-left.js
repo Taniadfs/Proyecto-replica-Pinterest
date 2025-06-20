@@ -15,5 +15,5 @@ export function crearNavLeft() {
     btn.classList.add('nav-button')
     left.appendChild(btn)
   })
-  return left
+  return { left, logo }
 }
