@@ -3,20 +3,37 @@ import { renderImages } from './gallery.js'
 
 let primeraBusqueda = null
 
+function eliminarMensajeSinResultados() {
+  const mensajeExistente = document.querySelector('.mensaje-sin-resultados')
+  if (mensajeExistente) mensajeExistente.remove()
+}
+
 export default function iniciarSearchListener(boton, input) {
   boton.addEventListener('click', async () => {
     console.log('Has hecho click en la lupa')
+
+    eliminarMensajeSinResultados()
     const query = input.value.trim()
     if (query === '') return
-
     input.value = ''
 
-    let images = await getImages(query)
+    let { results: images, total } = await getImages(query)
     console.log('Resultados de la búsqueda:', images)
 
-    if (!images || images.length === 0) {
-      images = await getImages('gatos')
+    const noMatch = images.every(
+      (img) => !img.alt_description?.toLowerCase().includes(query.toLowerCase())
+    )
+
+    if (!images || images.length === 0 || total === 0 || noMatch) {
+      const fallback = await getImages('gatos')
+      images = fallback.results
       console.log('No se encontraron resultados, mostrando gatos:', images)
+
+      const mensaje = document.createElement('p')
+      mensaje.textContent =
+        'No se encontraron resultados. Te mostramos imágenes de gatos 🐱'
+      mensaje.classList.add('mensaje-sin-resultados')
+      document.querySelector('main').prepend(mensaje)
     } else {
       if (!primeraBusqueda) {
         primeraBusqueda = query.trim().toLowerCase()
@@ -30,8 +47,11 @@ export default function iniciarSearchListener(boton, input) {
 export async function reiniciarPrimeraBusqueda(input) {
   if (!primeraBusqueda) return
 
-  const images = await getImages(primeraBusqueda)
+  const { results: images } = await getImages(primeraBusqueda)
   console.log('Reiniciando primera búsqueda:', images)
+
+  eliminarMensajeSinResultados()
+
   renderImages(images)
   input.value = ''
 }

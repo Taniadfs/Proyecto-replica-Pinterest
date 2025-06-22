@@ -132,6 +132,13 @@ main {
   display: block;
 }
 
+.mensaje-sin-resultados {
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  margin-top: 20px;
+}
+
 body {
   background-color: #fff;
 }

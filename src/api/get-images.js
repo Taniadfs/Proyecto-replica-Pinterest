@@ -4,9 +4,10 @@ export async function getImages(query) {
       `https://api.unsplash.com/search/photos?query=${query}&client_id=XPeoqeXdO4KBPfoJmbKZQ04eefqdllWVkuMYABRY7Ps`
     )
     const data = await response.json()
-    return data.results
+    console.log('🔎 API data completa:', data)
+    return data // Devuelve el objeto completo con results y total
   } catch (error) {
     console.error('Error fetching images:', error)
-    return []
+    return { results: [], total: 0 }
   }
 }
