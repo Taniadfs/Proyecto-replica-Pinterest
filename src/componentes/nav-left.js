@@ -3,7 +3,7 @@ export function crearNavLeft() {
   left.classList.add('nav-left')
 
   const logo = document.createElement('img')
-  logo.src = '/public/Assets/logo-pinterest-vectoriel.svg'
+  logo.src = '/Assets/logo-pinterest-vectoriel.svg'
   logo.alt = 'Logo de Pinterest'
   logo.classList.add('logo')
   left.appendChild(logo)
