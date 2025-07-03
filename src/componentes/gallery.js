@@ -13,7 +13,7 @@ export function renderImages(images) {
   images.forEach((image) => {
     const img = document.createElement('img')
     img.src = image.urls.small
-    img.alt = image.alt_description || 'Imagen sin descripción'
+
     img.loading = 'lazy'
     img.classList.add('gallery-image')
     containerImages.appendChild(img)

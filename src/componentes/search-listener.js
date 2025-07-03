@@ -24,7 +24,7 @@ export default function iniciarSearchListener(boton, input) {
       (img) => !img.alt_description?.toLowerCase().includes(query.toLowerCase())
     )
 
-    if (noMatch) {
+    if (images.length === 0) {
       const fallback = await getImages('gatos')
       images = fallback.results
       console.log('No se encontraron resultados, mostrando gatos:', images)
